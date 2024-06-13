@@ -10,9 +10,9 @@ AS
                     type = '''|| type_file ||'''
                     field_delimiter = '''|| field_delimiter ||'''
                     skip_header = 1
-                    null_if = ('''NULL''', '''null''')
-                    empty_field_as_null = true;';
-        EXECUTE IMMEDIATE :QUERY;
-        RETURN :QUERY;
+                    null_if = (''NULL'', ''null'')
+                    empty_field_as_null = true';
+        EXECUTE IMMEDIATE QUERY;
+        RETURN QUERY;
     END;
     $$;
