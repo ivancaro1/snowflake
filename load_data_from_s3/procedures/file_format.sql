@@ -1,4 +1,4 @@
-CREATE OR REPLACE PROCEDURE create_file_formar(file_format_name VARCHAR, type_file VARCHAR, field_delimiter VARCHAR)
+CREATE OR REPLACE PROCEDURE create_file_format(file_format_name VARCHAR, type_file VARCHAR, field_delimiter VARCHAR)
     RETURNS VARCHAR
     LANGUAGE SQL
 AS
