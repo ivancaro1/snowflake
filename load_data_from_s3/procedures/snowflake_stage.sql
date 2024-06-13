@@ -8,7 +8,7 @@ AS
         QUERY VARCHAR;
     BEGIN
         QUERY := 'CREATE OR REPLACE STAGE '|| snowflake_stage_name ||'
-                    storage_integration = '''|| storage_integration ||'''
+                    storage_integration = '|| storage_integration ||'
                     url = '''|| url_bucket ||'''
                     file_format = '''|| file_format_name ||'''';
         EXECUTE IMMEDIATE QUERY;
