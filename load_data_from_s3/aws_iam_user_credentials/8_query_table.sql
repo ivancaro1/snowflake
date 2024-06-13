@@ -1,0 +1,1 @@
+SELECT * FROM DBT_DB.PROD.test;
