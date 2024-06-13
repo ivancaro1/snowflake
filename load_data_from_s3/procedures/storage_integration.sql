@@ -5,6 +5,7 @@ AS
     $$
     DECLARE
         message_out VARCHAR DEFAULT 'Storage integration to S3 SUCCESFULLY CREATED';
+        QUERY VARCHAR;
     BEGIN
         QUERY := 'CREATE OR REPLACE STORAGE INTEGRATION '|| storage_name ||'
             type = external_stage
