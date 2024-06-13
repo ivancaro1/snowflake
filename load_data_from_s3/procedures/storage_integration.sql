@@ -4,7 +4,7 @@ CREATE OR REPLACE PROCEDURE create_storage_integration_to_s3(storage_name VARCHA
 AS
     $$
     DECLARE
-        message_out VARCHAR DEFAULT 'Storage integration to S3 SUCCESFULLY CREATED';
+        message_out VARCHAR DEFAULT 'Storage integration to S3 SUCCESFULLY CREATED OR REPLACED';
         QUERY VARCHAR;
     BEGIN
         QUERY := 'CREATE OR REPLACE STORAGE INTEGRATION '|| storage_name ||'
@@ -13,7 +13,7 @@ AS
             enabled = true
             storage_aws_role_arn = '''|| iam_role ||'''
             storage_allowed_locations = ('''|| bucket_name ||''')';
-        EXECUTE IMMEDIATE :QUERY;
+        EXECUTE IMMEDIATE QUERY;
         RETURN message_out;
     END;
     $$;

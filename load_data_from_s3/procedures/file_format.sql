@@ -4,6 +4,7 @@ CREATE OR REPLACE PROCEDURE create_file_format(file_format_name VARCHAR, type_fi
 AS
     $$
     DECLARE
+        message_out VARCHAR DEFAULT 'File format SUCCESFULLY CREATED OR REPLACED';
         QUERY VARCHAR;
     BEGIN
         QUERY := 'CREATE OR REPLACE FILE FORMAT '|| file_format_name ||'
@@ -13,6 +14,6 @@ AS
                     null_if = (''NULL'', ''null'')
                     empty_field_as_null = true';
         EXECUTE IMMEDIATE QUERY;
-        RETURN QUERY;
+        RETURN message_out;
     END;
     $$;
