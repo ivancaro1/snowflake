@@ -12,13 +12,13 @@ CREATE OR REPLACE PROCEDURE create_snowpipe(
 AS
 $$
 DECLARE
-    message_out STRING DEFAULT 'Snowflake stage SUCCESSFULLY CREATED OR REPLACED';
+    message_out STRING DEFAULT 'SnowflakePipe SUCCESSFULLY CREATED OR REPLACED';
     QUERY STRING;
 BEGIN
     QUERY := 'CREATE OR REPLACE PIPE ' || database_name || '.' || schema_name || '.' || snowpipe_name || ' AUTO_INGEST = TRUE AS
               COPY INTO ' || database_name || '.' || schema_name || '.' || target_table || '
               FROM @' || stage_name || ' PATTERN = ''' || pattern_file || '''
-              FILE_FORMAT = (FORMAT_NAME = ''' || format_name || ''');';
+              FILE_FORMAT = (FORMAT_NAME = csv_format);';
     EXECUTE IMMEDIATE :QUERY;
     RETURN message_out;
 END;
