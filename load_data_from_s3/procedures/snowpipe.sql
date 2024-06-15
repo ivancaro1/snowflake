@@ -4,8 +4,7 @@ CREATE OR REPLACE PROCEDURE create_snowpipe(
     snowpipe_name VARCHAR,
     target_table VARCHAR,
     stage_name VARCHAR,
-    pattern_file VARCHAR,
-    format_name VARCHAR
+    pattern_file VARCHAR
 )
     RETURNS STRING
     LANGUAGE SQL
