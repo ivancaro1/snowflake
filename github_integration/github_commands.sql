@@ -12,3 +12,6 @@ select $1 from @tutorial/branches/main/README.md;
 
 -- Fetch git repository updates.
 alter git repository tutorial fetch;
+
+-- COMMAND FOR EXECUTING FILES
+execute immediate from @tutorial/branches/main/'< FILE NAME >';
