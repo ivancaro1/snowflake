@@ -1,0 +1,5 @@
+-- CREATE A PIPE TO INGEST DATA
+CREATE OR REPLACE PIPE '< DATABASE >'.'< SCHEMA >'.'< SNOWPIPE NAME >' auto_ingest = true AS
+    COPY INTO '< DATABASE >'.'< SCHEMA >'.'< TARGET TABLE >'
+    FROM @'< STAGE NAME>' PATTERN=' FILE NAME WITH EXTENSION (.csv, .json, etc)'
+    file_format = '< FILE FORMAT >';
